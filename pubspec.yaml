@@ -1,0 +1,243 @@
+name: finalpillidentifier
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0-366.0.dev <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  url_launcher: ^6.1.11
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_app_name: ^0.1.0
+  image_picker: ^0.8.4+4
+  quiver: ^3.0.1
+flutter_app_name:
+  name: "Dewini"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/logo.png"
+
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - images/Backdrop.png
+    - images/Group.png
+    - images/logo.png
+    - images/BG.png
+    - images/backup.png
+    - images/rechercher.png
+    - images/cardio.png
+    - images/gastro.png
+    - images/infect.png
+    - images/neuro.png
+    - images/amlodipine 10 .jpg 
+    - images/amlodipine 5.jpg
+    - images/amlodis 5.jpg 
+    - images/amlodis 10.jpg
+    - images/angiotec 5.jpg 
+    - images/angiotec 20.jpg 
+    - images/angiozide 20-12.5.jpg
+    - images/aprofort 300-10.png
+    - images/aradeux plus 300-5.jpg 
+    - images/aradeux plus 300-10.jpg
+    - images/araven 300.jpg 
+    - images/araven-ic 300-5.jpg 
+    - images/araven-ic 300-10.jpg 
+    - images/bi-therapil 10-2.5.jpg 
+    - images/bipreterax 5-1.25.jpg 
+    - images/bipreterax 10-2.5.jpg 
+    - images/bisocor 2.5.jpg 
+    - images/bisocor 5.jpg 
+    - images/bisopral 2.5.jpg 
+    - images/blopress 8.jpg 
+    - images/blopress 16.jpg 
+    - images/blopress plus 16-12.5.jpg 
+    - images/capocard 25.jpg 
+    - images/capocard 50.jpg 
+    - images/capril 25.jpg 
+    - images/capril 50.jpg 
+    - images/cardensiel 2.5.jpg 
+    - images/cardensiel 5.jpg 
+    - images/cebutral 400.jpg 
+    - images/celiprol 200.jpg 
+    - images/cincor 2.5.jpg 
+    - images/cincor 5.jpg 
+    - images/cincor 10.jpg 
+    - images/clopix 75.jpg 
+    - images/coaprovel 300-12.5.jpg 
+    - images/coaprozar 300-12.5.jpg 
+    - images/coaprozar 300-25.jpg 
+    - images/co-aradeux 150-12.5 90.jpg 
+    - images/co-aradeux 150-12.5.jpg 
+    - images/co-aradeux 300-12.5.jpg 
+    - images/co-aradeux 300-25.jpg 
+    - images/co-medzar 50-12.5.jpg 
+    - images/concor amlo 5-5.jpg 
+    - images/corapril 10-25.jpg 
+    - images/cordarone 200.jpg 
+    - images/cosimprel 5-5.jpg 
+    - images/cosimprel 5-10.jpg
+    - images/cosimprel 10-10.jpg 
+    - images/cotareg 80-12.5.jpg 
+    - images/cotareg 160-25.jpg 
+    - images/co-therapil 5-5.jpg 
+    - images/co-therapil 10-5.jpg 
+    - images/coveram 5-5.jpg 
+    - images/coveram 10-5.jpg 
+    - images/coveram 10-10.jpg 
+    - images/coversyl 5.jpg 
+    - images/delapride .jpg 
+    - images/detensiel 10.jpg 
+    - images/digoxine native 0.25.jpg 
+    - images/dilacor 2.jpg 
+    - images/dopanore 250.jpg 
+    - images/duo for 160-5.jpg 
+    - images/duo for 160-10-12.5.jpg 
+    - images/evocor 2.5.jpg 
+    - images/exforge 10 160.jpg 
+    - images/fludex lp.jpg
+    - images/hypoten 50.jpg
+    - images/hypoten 100.jpg
+    - images/lasicare 40.jpg
+    - images/lasicare 500.jpg
+    - images/lasilix 40.jpg
+    - images/lodipex 5.jpg
+    - images/lopril 50.jpg
+    - images/lopril 25.jpg
+    - images/losar 50.jpg
+    - images/losar fort 100.jpg
+    - images/lowrac 5.jpg
+    - images/loxen lp 50.jpg
+    - images/lusopress 20.jpg
+    - images/Medazar Fort 100.jpg
+    - images/mibral 5.jpg
+    - images/natrixam 1.5-5.jpg
+    - images/nebilet 5.jpg
+    - images/noractone 50.jpg
+    - images/normocardil 40.jpg
+    - images/tensopril 25.jpg
+    - images/tensopril 50.jpg
+    - images/theraglor 90.jpg
+    - images/triatec 2.5.jpg
+    - images/triatec 10.jpg
+    - images/twynsta 40-5.jpg
+    - images/twynsta 80-10.jpg
+    - images/zanextra 20-10.jpg
+    - images/zanextra 20-20.jpg
+    - images/value plus 160-10.png 
+    - images/physiotens 0.2.jpg 
+    - images/pidogrel 75.jpg 
+    - images/plagrel 75.jpg 
+    - images/plavix 75.jpg 
+    - images/procardin 75.jpg 
+    - images/rapril 5.jpg 
+    - images/sintrom 4.jpg 
+    - images/sotalol mylan 160.jpg 
+    - images/tareg 80.jpg 
+    - images/telmycore 40.jpg
+    - images/telmycore plus 80-12.5.jpg 
+    - images/tenar 0.2.jpg 
+    - images/tenar 0.4.jpg 
+    - images/tensiovals duo 5-80.jpg 
+    - images/therapil 5.jpg 
+    - images/torental lp 400.jpg 
+    - images/triatec 2.5.jpg 
+    - images/vastarel 35.jpg  
+    - images/spasmocalm.jpg
+    - images/gastral.jpg
+    - images/azro.png
+    - images/augmentin 1.jpg
+    - images/flagyl 250.jpg
+    - images/tamizol 500.jpg
+    - images/nautamine 90.jpeg
+    - images/primperan 10.jpeg
+    - images/ippsium 40.png
+    - images/dogmatil 50.jpg
+    - images/atarax 25.jpg
+    - images/xanax 0.5.jpg
+    - images/lysanxia 10.jpg
+    - images/atarax 25.jpeg
+    - images/zanidip 10.jpeg
+    - images/zanidip-20.jpg
+    - images/zarteg 160.jpeg
+    - images/triatec 5.jpg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
