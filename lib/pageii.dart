@@ -51,96 +51,94 @@ void _onTabTapped(int index) {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       body: Container(
+        margin:EdgeInsets.fromLTRB(1.5*EdgeMargin, 0, EdgeMargin, 0) ,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
         color: Color(0xfff6f5f5),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                            builder: (context) => const PageI(),
-                    ),
-                  );
-                },
-                child: Container(
-                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                  padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                  width: double.infinity,
-                  child: Align(
-                    alignment: Alignment.centerLeft,
+            Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:[
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                                builder: (context) => const PageI(),
+                        ),
+                      );
+                    },
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(EdgeMargin, 0.8*TopMargin, 0,0),
                     child: SizedBox(
-                      width: MediaQuery.of(context).size.width *  0.0144,
-                      height: MediaQuery.of(context).size.width *  0.0133,
-                      child: Image.asset(
-                        'images/backup.png',
-                        //width: MediaQuery.of(context).size.width *  0.0144,
-                        //height: MediaQuery.of(context).size.height * 0.133,
+                        width: MediaQuery.of(context).size.width *  0.025,
+                        height: MediaQuery.of(context).size.width *  0.025,
+                        child: Image.asset(
+                          'images/backup.png',
+                        ),
                       ),
-                    ),
+                    
                   ),
                 ),
-              ),
-            ),
+              
+                SizedBox(height: MediaQuery.of(context).size.width *  0.15,),
+              
+                Container(
 
-            Expanded(
-              child: Container(
-                width: MediaQuery.of(context).size.width *  0.792,
+                width: MediaQuery.of(context).size.width *  0.9,
                 height: MediaQuery.of(context).size.height * 0.0457,
-                margin: const EdgeInsets.fromLTRB(0, 0, 38, 0),
+                padding: EdgeInsets.fromLTRB(1.5*EdgeMargin, 0, 0, 0),
                 child: const Text(
                   'Classe thérapeutique ',
                   style: TextStyle(
                       fontFamily: 'Roboto',
-                      fontSize: 34,
-                      fontWeight: FontWeight.w400,
+                      fontSize: 27,
+                      fontWeight: FontWeight.bold,
                       height: 1.2058823529,
                       letterSpacing: 0.41,
                       color: Color(0xff2d0c57)),
                 ),
               ),
+                
+                ]
+              ),
             ),
+          
+            SizedBox(height: MediaQuery.of(context).size.width *  0.1,),
 
             Container(
-              margin: const EdgeInsets.fromLTRB(24, 0, 0, 20),
-              width: MediaQuery.of(context).size.width *  0.792,
-              height: MediaQuery.of(context).size.height * 0.2354,
-              decoration: const BoxDecoration(
-                color: Color(0xfff6f5f5),
-                ),
+              height: MediaQuery.of(context).size.width *  0.44,
+              width: double.infinity,
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
 
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PageIIICardio(),
-                          ),
-                        );
-                      },
-                      child: const ClasseTherap(
-                        clname: 'Cardiologie', 
-                        image1: 'cardio.png'
-                        )
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PageIIICardio(),
+                        ),
+                      );
+                    },
+                    child: const ClasseTherap(
+                      clname: 'Cardiologie', 
+                      image1: 'cardio.png'
+                      )
                   ),
-
-
-                  Expanded(
-                    child: GestureDetector(
+                                
+                  GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
@@ -154,58 +152,52 @@ void _onTabTapped(int index) {
                         image1: 'infect.png'
                         )
                     ),
-                  ),
+                  
 
                 ],
               ),
             ),
                   
-            Container(
-              margin: const EdgeInsets.fromLTRB(24, 0, 0, 20),
-              width: MediaQuery.of(context).size.width *  0.792,
-              height: MediaQuery.of(context).size.height * 0.2354,
-              decoration: const BoxDecoration(
-                color: Color(0xfff6f5f5),
-                ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
+          Container(
+            height: MediaQuery.of(context).size.width *  0.44,
+            decoration: const BoxDecoration(
+              color: Color(0xfff6f5f5),
+              ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
 
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PageIIIGastro(),
-                          ),
-                        );
-                      },
-                      child: const ClasseTherap(
-                        clname: 'Gastrologie', 
-                        image1: 'gastro.png'
-                        )
-                    ),
+                
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PageIIIGastro(),
+                        ),
+                      );
+                    },
+                    child: const ClasseTherap(
+                      clname: 'Gastrologie', 
+                      image1: 'gastro.png'
+                      )
                   ),
-
-
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PageIIINeuro(),
-                          ),
-                        );
-                      },
-                      child: const ClasseTherap(
-                        clname: 'Neurologie', 
-                        image1: 'neuro.png'
-                        )
-                    ),
+                              
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PageIIINeuro(),
+                        ),
+                      );
+                    },
+                    child: const ClasseTherap(
+                      clname: 'Neurologie', 
+                      image1: 'neuro.png'
+                      )
                   ),
-
+                
                 ],
               ),
             ),
@@ -254,63 +246,51 @@ class ClasseTherap extends StatefulWidget {
 class _ClasseTherapState extends State<ClasseTherap> {
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Container(
-      margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
-      color: Colors.white,
-      child: Stack(
+      margin: EdgeInsets.fromLTRB(0.5*ButtomMargin,0.5*ButtomMargin, 0.5*ButtomMargin, 0.5*ButtomMargin),
+      width: MediaQuery.of(context).size.width *  0.43,
+      height: MediaQuery.of(context).size.width *  0.43,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: const Color(0xffd8d0e3)),
+      ),
+      child: Column(
         children: [
-          Positioned(
-            left: 0,
-            top: 0,
-            child: Align(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width *  0.4275,
-                height: MediaQuery.of(context).size.height * 0.2354,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: const Color(0xffd8d0e3)),
-                  ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
+          Center(            
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.18,
+              height: MediaQuery.of(context).size.height * 0.07,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/${widget.image1}'),
+                  //fit: BoxFit.cover
                 ),
               ),
             ),
           ),
-          Positioned(
-            left: MediaQuery.of(context).size.width * 0.038,
-            top: MediaQuery.of(context).size.height * 0.16,
-            child: Align(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
-                height: MediaQuery.of(context).size.height * 0.5,
-                child: Text(
-                  widget.clname,
-                  style: const TextStyle(
-                    fontFamily: 'Roboto',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    height: 1.1725,
-                    color: Color(0xff2d0c57),
-                  ),
-                ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+          Center(
+            child: SizedBox(
+              //width: MediaQuery.of(context).size.width * 0.3,
+              //height: MediaQuery.of(context).size.height * 0.5,
+              child: Text(
+                widget.clname,
+                style: const TextStyle(
+                  fontFamily: 'Roboto',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  height: 1.1725,
+                  color: Color(0xff2d0c57),       
               ),
             ),
           ),
-          Positioned(
-            left: MediaQuery.of(context).size.width * 0.085,
-            top: MediaQuery.of(context).size.height * 0.057,
-            child: Align(
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.18,
-                height: MediaQuery.of(context).size.height * 0.08,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('images/${widget.image1}'),
-                    //fit: BoxFit.cover
-                  ),
-                ),
-              ),
-            ),
-          ),
+        ),
+          
         ],
       ),
     );
@@ -2795,7 +2775,7 @@ class _PageIIIcardioState extends State<PageIIICardio> {
   });
 }
 
-void _runFiltredFilter(List<String> eleEsmou ) { 
+  void _runFiltredFilter(List<String> eleEsmou ) { 
   List<Widget> results = [];
   print('object');
   if (eleEsmou.isEmpty) {
@@ -2818,6 +2798,9 @@ void _runFiltredFilter(List<String> eleEsmou ) {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -2830,7 +2813,6 @@ void _runFiltredFilter(List<String> eleEsmou ) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: Stack(
@@ -2847,8 +2829,8 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                             'Systeme Cardio-vasculaire',
                             style: TextStyle(
                               fontFamily: 'Roboto',
-                              fontSize: 28,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
                               height: 1.3666666667,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
@@ -2859,14 +2841,14 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                     ),
                   
                     Positioned(
-                      left: MediaQuery.of(context).size.width * 0.7,
+                      right: 0,
                       top: 0,
                       child: Align(
                         child: SizedBox(
                           width: MediaQuery.of(context).size.width * 0.48,
                           height: MediaQuery.of(context).size.height * 0.16,
                           child: Opacity(
-                            opacity: 0.4,
+                            opacity: 0.45,
                             child: Container(
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -2896,8 +2878,8 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.0144,
-                              height: MediaQuery.of(context).size.width *  0.0133,
+                              width: MediaQuery.of(context).size.width *  0.025,
+                              height: MediaQuery.of(context).size.width *  0.025,
                               child: Image.asset(
                                 'images/backup.png',
                                // width: MediaQuery.of(context).size.width *  0.0144,
@@ -2915,8 +2897,8 @@ void _runFiltredFilter(List<String> eleEsmou ) {
             
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.0535,
-                margin: const EdgeInsets.fromLTRB(20, 0, 20, 40),
+                height: MediaQuery.of(context).size.height * 0.055,
+                margin: EdgeInsets.fromLTRB(2.5*EdgeMargin, 0, EdgeMargin, 0),
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0xffd8d0e3)),
                   color: const Color(0xffffffff),
@@ -2926,13 +2908,11 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 100,
-                      height: 100,
-                      margin: const EdgeInsets.fromLTRB(10, 2, 10, 0),
+                      width: 5*EdgeMargin,
+                      height: 5* EdgeMargin,
+                      margin: EdgeInsets.fromLTRB(1.2*EdgeMargin, 0, 0, 0),
                       child: Image.asset(
                         'images/rechercher.png',
-                        width: 100,
-                        height: 100,
                       ),
                     ),
                     Expanded(
@@ -5487,6 +5467,9 @@ void _runFiltredFilter(List<String> eleEsmou ) {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -5499,7 +5482,6 @@ void _runFiltredFilter(List<String> eleEsmou ) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: Stack(
@@ -5516,8 +5498,8 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                             'Systeme Cardio-vasculaire',
                             style: TextStyle(
                               fontFamily: 'Roboto',
-                              fontSize: 28,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
                               height: 1.3666666667,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
@@ -5528,14 +5510,14 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                     ),
                   
                     Positioned(
-                      left: MediaQuery.of(context).size.width * 0.7,
+                      right: 0,
                       top: 0,
                       child: Align(
                         child: SizedBox(
                           width: MediaQuery.of(context).size.width * 0.48,
                           height: MediaQuery.of(context).size.height * 0.16,
                           child: Opacity(
-                            opacity: 0.4,
+                            opacity: 0.45,
                             child: Container(
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -5565,8 +5547,8 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.0144,
-                              height: MediaQuery.of(context).size.width *  0.0133,
+                              width: MediaQuery.of(context).size.width *  0.025,
+                              height: MediaQuery.of(context).size.width *  0.025,
                               child: Image.asset(
                                 'images/backup.png',
                                // width: MediaQuery.of(context).size.width *  0.0144,
@@ -5584,8 +5566,8 @@ void _runFiltredFilter(List<String> eleEsmou ) {
             
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.0535,
-                margin: const EdgeInsets.fromLTRB(20, 0, 20, 40),
+                height: MediaQuery.of(context).size.height * 0.055,
+                margin: EdgeInsets.fromLTRB(2.5*EdgeMargin, 0, EdgeMargin, 0),
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0xffd8d0e3)),
                   color: const Color(0xffffffff),
@@ -5595,13 +5577,11 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 100,
-                      height: 100,
-                      margin: const EdgeInsets.fromLTRB(10, 2, 10, 0),
+                      width: 5*EdgeMargin,
+                      height: 5* EdgeMargin,
+                      margin: EdgeInsets.fromLTRB(1.2*EdgeMargin, 0, 0, 0),
                       child: Image.asset(
                         'images/rechercher.png',
-                        width: 100,
-                        height: 100,
                       ),
                     ),
                     Expanded(
@@ -5644,19 +5624,21 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                         },
                       )
                     : Center(
+                        child: Container(
+                        margin: EdgeInsets.fromLTRB(1.5*EdgeMargin, 0, 1.5*EdgeMargin, 0),
                         child: Text(
-                          'Les caractéristiques choisies ne correspondent pas à \nune spécialité de médicament présente dans la base de données',
+                          'Les caractéristiques choisies ne correspondent pas à une spécialité de médicament présente dans la base de données \n \nMERCI de réinitialisez avant de filtrer une autre fois ',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontSize: 17,
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.bold,
                             height: 1.4,
                             letterSpacing: -0.41,
                             color: Color(0xff9586a8),
                           ),
                         ),
-                      ),
+                      ),),
           ),
 
   
@@ -5837,6 +5819,9 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -5849,7 +5834,6 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: Stack(
@@ -5866,8 +5850,8 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
                             'Systeme Gastro-intestinal',
                             style: TextStyle(
                               fontFamily: 'Roboto',
-                              fontSize: 28,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
                               height: 1.3666666667,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
@@ -5878,14 +5862,14 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
                     ),
                   
                     Positioned(
-                      left: MediaQuery.of(context).size.width * 0.7,
+                      right: 0,
                       top: 0,
                       child: Align(
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.48,
+                          width: MediaQuery.of(context).size.width * 0.3,
                           height: MediaQuery.of(context).size.height * 0.16,
                           child: Opacity(
-                            opacity: 0.3,
+                            opacity: 0.45,
                             child: Container(
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -5915,8 +5899,8 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.0144,
-                              height: MediaQuery.of(context).size.width *  0.0133,
+                              width: MediaQuery.of(context).size.width *  0.025,
+                              height: MediaQuery.of(context).size.width *  0.025,
                               child: Image.asset(
                                 'images/backup.png',
                                // width: MediaQuery.of(context).size.width *  0.0144,
@@ -5934,8 +5918,8 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
             
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.0535,
-                margin: const EdgeInsets.fromLTRB(20, 0, 20, 40),
+                height: MediaQuery.of(context).size.height * 0.055,
+                margin: EdgeInsets.fromLTRB(2.5*EdgeMargin, 0, EdgeMargin, 0),
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0xffd8d0e3)),
                   color: const Color(0xffffffff),
@@ -5945,13 +5929,11 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 100,
-                      height: 100,
-                      margin: const EdgeInsets.fromLTRB(10, 2, 10, 0),
+                      width: 5*EdgeMargin,
+                      height: 5* EdgeMargin,
+                      margin: EdgeInsets.fromLTRB(1.2*EdgeMargin, 0, 0, 0),
                       child: Image.asset(
                         'images/rechercher.png',
-                        width: 100,
-                        height: 100,
                       ),
                     ),
                     Expanded(
@@ -6147,6 +6129,9 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -6159,7 +6144,6 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: Stack(
@@ -6176,8 +6160,8 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
                             'Systeme Neurologique',
                             style: TextStyle(
                               fontFamily: 'Roboto',
-                              fontSize: 28,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
                               height: 1.3666666667,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
@@ -6188,14 +6172,14 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
                     ),
                   
                     Positioned(
-                      left: MediaQuery.of(context).size.width * 0.7,
+                      right: 0,
                       top: 0,
                       child: Align(
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.48,
+                          width: MediaQuery.of(context).size.width * 0.35,
                           height: MediaQuery.of(context).size.height * 0.16,
                           child: Opacity(
-                            opacity: 0.3,
+                            opacity: 0.45,
                             child: Container(
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -6225,11 +6209,11 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.0144,
-                              height: MediaQuery.of(context).size.width *  0.0133,
+                              width: MediaQuery.of(context).size.width *  0.025,
+                              height: MediaQuery.of(context).size.width *  0.025,
                               child: Image.asset(
                                 'images/backup.png',
-                                //width: MediaQuery.of(context).size.width *  0.0144,
+                               // width: MediaQuery.of(context).size.width *  0.0144,
                                 //height: MediaQuery.of(context).size.height * 0.133,
                               ),
                             ),
@@ -6244,8 +6228,8 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
             
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.0535,
-                margin: const EdgeInsets.fromLTRB(20, 0, 20, 40),
+                height: MediaQuery.of(context).size.height * 0.055,
+                margin: EdgeInsets.fromLTRB(2.5*EdgeMargin, 0, EdgeMargin, 0),
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0xffd8d0e3)),
                   color: const Color(0xffffffff),
@@ -6255,13 +6239,11 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 100,
-                      height: 100,
-                      margin: const EdgeInsets.fromLTRB(10, 2, 10, 0),
+                      width: 5*EdgeMargin,
+                      height: 5* EdgeMargin,
+                      margin: EdgeInsets.fromLTRB(1.2*EdgeMargin, 0, 0, 0),
                       child: Image.asset(
                         'images/rechercher.png',
-                        width: 100,
-                        height: 100,
                       ),
                     ),
                     Expanded(
@@ -6454,6 +6436,9 @@ class _PageIIINfectState extends State<PageIIINfect> {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -6466,7 +6451,6 @@ class _PageIIINfectState extends State<PageIIINfect> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: Stack(
@@ -6480,11 +6464,11 @@ class _PageIIINfectState extends State<PageIIINfect> {
                           width: MediaQuery.of(context).size.width * 0.879,
                           height: MediaQuery.of(context).size.height * 0.07,
                           child: const Text(
-                            'Les Anti-infectieux',
+                            'Systeme Anti-infectieux',
                             style: TextStyle(
                               fontFamily: 'Roboto',
-                              fontSize: 28,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
                               height: 1.3666666667,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
@@ -6495,14 +6479,14 @@ class _PageIIINfectState extends State<PageIIINfect> {
                     ),
                   
                     Positioned(
-                      left: MediaQuery.of(context).size.width * 0.7,
+                      right: 0,
                       top: 0,
                       child: Align(
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.48,
+                          width: MediaQuery.of(context).size.width * 0.35,
                           height: MediaQuery.of(context).size.height * 0.16,
                           child: Opacity(
-                            opacity: 0.3,
+                            opacity: 0.45,
                             child: Container(
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -6532,12 +6516,13 @@ class _PageIIINfectState extends State<PageIIINfect> {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.0144,
-                              height: MediaQuery.of(context).size.width *  0.0133,
+                              width: MediaQuery.of(context).size.width *  0.025,
+                              height: MediaQuery.of(context).size.width *  0.025,
                               child: Image.asset(
                                 'images/backup.png',
+                                fit: BoxFit.contain,
                                // width: MediaQuery.of(context).size.width *  0.0144,
-                               // height: MediaQuery.of(context).size.height * 0.133,
+                                //height: MediaQuery.of(context).size.height * 0.133,
                               ),
                             ),
                           ),
@@ -6551,8 +6536,8 @@ class _PageIIINfectState extends State<PageIIINfect> {
             
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.0535,
-                margin: const EdgeInsets.fromLTRB(20, 0, 20, 40),
+                height: MediaQuery.of(context).size.height * 0.055,
+                margin: EdgeInsets.fromLTRB(2.5*EdgeMargin, 0, EdgeMargin, 0),
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0xffd8d0e3)),
                   color: const Color(0xffffffff),
@@ -6562,13 +6547,11 @@ class _PageIIINfectState extends State<PageIIINfect> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 100,
-                      height: 100,
-                      margin: const EdgeInsets.fromLTRB(10, 2, 10, 0),
+                      width: 5*EdgeMargin,
+                      height: 5* EdgeMargin,
+                      margin: EdgeInsets.fromLTRB(1.2*EdgeMargin, 0, 0, 0),
                       child: Image.asset(
                         'images/rechercher.png',
-                        width: 100,
-                        height: 100,
                       ),
                     ),
                     Expanded(
@@ -6848,8 +6831,8 @@ class _PageIVState extends State<PageIV> {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width *  0.0144,
-                        height: MediaQuery.of(context).size.width *  0.0133,
+                        width: MediaQuery.of(context).size.width *  0.025,
+                        height: MediaQuery.of(context).size.width *  0.025,
                         child: Image.asset(
                           'images/backup.png',
                           //width: MediaQuery.of(context).size.width *  0.0144,
@@ -7028,8 +7011,8 @@ class _PageIVGastroState extends State<PageIVGastro> {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width *  0.0144,
-                        height: MediaQuery.of(context).size.width *  0.0133,
+                        width: MediaQuery.of(context).size.width *  0.025,
+                        height: MediaQuery.of(context).size.width *  0.025,
                         child: Image.asset(
                           'images/backup.png',
                          // width: MediaQuery.of(context).size.width *  0.0144,
@@ -7208,8 +7191,8 @@ class _PageIVNeuroState extends State<PageIVNeuro> {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width *  0.0144,
-                        height: MediaQuery.of(context).size.width *  0.0133,
+                        width: MediaQuery.of(context).size.width *  0.025,
+                        height: MediaQuery.of(context).size.width *  0.025,
                         child: Image.asset(
                           'images/backup.png',
                          // width: MediaQuery.of(context).size.width *  0.0144,
@@ -7388,8 +7371,8 @@ class _PageIVInfState extends State<PageIVInf> {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width *  0.0144,
-                        height: MediaQuery.of(context).size.width *  0.0133,
+                        width: MediaQuery.of(context).size.width *  0.025,
+                        height: MediaQuery.of(context).size.width *  0.025,
                         child: Image.asset(
                           'images/backup.png',
                           //width: MediaQuery.of(context).size.width *  0.0144,

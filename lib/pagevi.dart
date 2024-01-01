@@ -51,6 +51,9 @@ void _onTabTapped(int index) {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold( //appBar: AppBar( title: const Text("Page VI"),),
     body: Container(
       padding:  const EdgeInsets.fromLTRB(0, 0, 0, 2),
@@ -63,43 +66,16 @@ void _onTabTapped(int index) {
       child: ListView(
         children: [
 
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const PageII()),
-              );
-            },
-            child: Container(
-              margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-              padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-              width: double.infinity,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: SizedBox(
-                  width: 6,
-                  height: 12,
-                  child: Image.asset(
-                    'images/backup.png',
-                    width: 6,
-                    height: 12,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          
-
           Container(
             height: MediaQuery.of(context).size.height * 0.0714,
             width: double.infinity,
-            margin: const EdgeInsets.fromLTRB(0, 0, 301, 21),
+            margin: EdgeInsets.fromLTRB(3*EdgeMargin, 6*EdgeMargin, 0, EdgeMargin),
             child: const Text(
               'Profil',
               style: TextStyle(
                 fontFamily: 'Roboto',
                 fontSize: 30,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.bold,
                 height: 1.3666666667,
                 letterSpacing: 0.4099999964,
                 color: Color(0xff2d0c57),
@@ -108,7 +84,7 @@ void _onTabTapped(int index) {
           ),
 
           Container(
-            margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
+            margin: EdgeInsets.fromLTRB(0, 0, 0, EdgeMargin),
             width: MediaQuery.of(context).size.width * 0.9,
             height: MediaQuery.of(context).size.height * 0.267,
             child: const CustomCircleAvatar(
@@ -198,10 +174,10 @@ class _CboxState extends State<Cbox> {
               style: const TextStyle(
                 fontFamily: 'Roboto',
                 fontSize: 14.0,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.bold,
                 height: 1.5714285714,
                 letterSpacing: -0.4099999964,
-                color: Color(0xff9586a8),
+                color: Color.fromARGB(255, 108, 72, 155),
               ),
             ),
           ),

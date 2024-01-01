@@ -2213,6 +2213,9 @@ void _onTabTapped(int index) {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       //appBar: AppBar(
       //  title: const Text("Filtrer"),
@@ -2240,13 +2243,13 @@ void _onTabTapped(int index) {
                 child : Align(
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.3,
-                    height: MediaQuery.of(context).size.height * 0.15,
+                    height: MediaQuery.of(context).size.height * 0.1,
                     child: const Center(child:Text(
                       'Filtrer',
                       style: TextStyle(
                         fontFamily: 'Roboto',
-                        fontSize: 24,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
                         height: 1.5,
                         letterSpacing: 0.4099999964,
                         color: Color(0xff2d0c57),
@@ -2258,7 +2261,7 @@ void _onTabTapped(int index) {
             ),
 
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0), 
+              padding: EdgeInsets.symmetric(vertical: EdgeMargin), 
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.75,
@@ -2267,25 +2270,22 @@ void _onTabTapped(int index) {
                   children: [
 
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.2,
+                      height: MediaQuery.of(context).size.height * 0.16,
                       width: MediaQuery.of(context).size.width * 0.9,
                       child: Column(
                         children: [
                           Container(
-                            margin: const EdgeInsets.fromLTRB(20, 0, 24.5, 16),
+                            margin: EdgeInsets.fromLTRB(4*EdgeMargin, 0, EdgeMargin, EdgeMargin), //hna
                             width: MediaQuery.of(context).size.width,
-                            child: SizedBox(
+                            child: SizedBox( //hna
                               width: MediaQuery.of(context).size.width * 0.3,
                               height: MediaQuery.of(context).size.height * 0.05,
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.29,
-                                height: MediaQuery.of(context).size.height * 0.04,
                                 child: const Text(
                                   'Comprimé:',
                                   style: TextStyle(
                                     fontFamily: 'Roboto',
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w400,
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.bold, //hna
                                     height: 1.5,
                                     letterSpacing: 0.41,
                                     color: Color(0xff2d0c57),
@@ -2293,117 +2293,115 @@ void _onTabTapped(int index) {
                                 ),
                               ),
                             ),
-                          ),
-                            Expanded(
-                              child: SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Container(
-                                  margin: const EdgeInsets.fromLTRB(17, 0, 0, 16),
-                                  width: MediaQuery.of(context).size.width, // Adjust the width as needed
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(27),
-                                    border: Border.all(color: const Color(0xffd8d0e3)),
-                                    color: const Color(0xffffffff),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Color(0x3f000000),
-                                        offset: Offset(0, 4),
-                                        blurRadius: 2,
+                          
+                          SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(1.5*EdgeMargin, 0, 1.5*EdgeMargin, 0),
+                                width: MediaQuery.of(context).size.width ,
+                                height: MediaQuery.of(context).size.height * 0.09,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(27),
+                                  border: Border.all(color: const Color(0xffd8d0e3)),
+                                  color: const Color(0xffffffff),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Color(0x3f000000),
+                                      offset: Offset(0, 4),
+                                      blurRadius: 2,
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  children: <Widget>[
+                                    // Your DropDown widgets here
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _formegeoDropdownKey,
+                                        items: const [
+                                        'carré',
+                                        'cercle',
+                                        'cœur',
+                                        'stade',
+                                        'Forme'
+                                        ],
+
+                                        value: 'Forme', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedFormegeo = newValue!;
+                                                    });
+                                                  },
                                       ),
-                                    ],
-                                  ),
-                                  child: Row(
-                                    children: <Widget>[
-                                      // Your DropDown widgets here
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _formegeoDropdownKey,
-                                          items: const [
-                                          'carré',
-                                          'cercle',
-                                          'cœur',
-                                          'stade',
-                                          'Forme'
-                                          ],
- 
-                                          value: 'Forme', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedFormegeo = newValue!;
-                                                      });
-                                                    },
-                                        ),
+                                    ),
+
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _secabiliteDropdownKey,
+                                        items: const [
+                                          'non',
+                                          'oui',
+                                          'Sécabilité',
+                                        ],
+                                        value: 'Sécabilité', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedSecabilite = newValue!;
+                                                    });
+                                                  },
                                       ),
+                                    ),
 
-                                      
-
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _secabiliteDropdownKey,
-                                          items: const [
-                                            'non',
-                                            'oui',
-                                            'Sécabilité',
-                                          ],
-                                          value: 'Sécabilité', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedSecabilite = newValue!;
-                                                      });
-                                                    },
-                                        ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _enrPelDropdownKey,
+                                        items: const [
+                                          'non',
+                                          'oui',
+                                          'Enrobage',
+                                        ],
+                                        value: 'Enrobage', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedEnrPel = newValue!;
+                                                    });
+                                                  },
                                       ),
+                                    ),                                      
 
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _enrPelDropdownKey,
-                                          items: const [
-                                            'non',
-                                            'oui',
-                                            'Enrobage',
-                                          ],
-                                          value: 'Enrobage', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedEnrPel = newValue!;
-                                                      });
-                                                    },
-                                        ),
-                                      ),                                      
-
-
-                                    ],
-                                  ),
+                                  ],
                                 ),
                               ),
-                          ),
+                            ),
+                        
                         ],
                       ),
                     ),
                     //validé
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.2,
+                      height: MediaQuery.of(context).size.height * 0.02,
+                      width:  MediaQuery.of(context).size.width,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.16,
                       width: MediaQuery.of(context).size.width * 0.9,
                       child: Column(
                         children: [
                           Container(
-                            margin: const EdgeInsets.fromLTRB(20, 0, 24.5, 16),
+                            margin: EdgeInsets.fromLTRB(4*EdgeMargin, 0, EdgeMargin, EdgeMargin), //hna
                             width: MediaQuery.of(context).size.width,
-                            child: SizedBox(
+                            child: SizedBox( //hna
                               width: MediaQuery.of(context).size.width * 0.3,
                               height: MediaQuery.of(context).size.height * 0.05,
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.29,
-                                height: MediaQuery.of(context).size.height * 0.04,
                                 child: const Text(
                                   'Conditionnement Primaire:',
                                   style: TextStyle(
                                     fontFamily: 'Roboto',
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w400,
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.bold, //hna
                                     height: 1.5,
                                     letterSpacing: 0.41,
                                     color: Color(0xff2d0c57),
@@ -2411,191 +2409,192 @@ void _onTabTapped(int index) {
                                 ),
                               ),
                             ),
-                          ),
-                            Expanded(
-                              child: SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Container(
-                                  margin: const EdgeInsets.fromLTRB(17, 0, 0, 16),
-                                  //width: MediaQuery.of(context).size.width * 2, // Adjust the width as needed
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(27),
-                                    border: Border.all(color: const Color(0xffd8d0e3)),
-                                    color: const Color(0xffffffff),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Color(0x3f000000),
-                                        offset: Offset(0, 4),
-                                        blurRadius: 2,
+
+                          SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(1.5*EdgeMargin, 0, 1.5*EdgeMargin, 0),
+                                //width: MediaQuery.of(context).size.width ,
+                                height: MediaQuery.of(context).size.height * 0.09,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(27),
+                                  border: Border.all(color: const Color(0xffd8d0e3)),
+                                  color: const Color(0xffffffff),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Color(0x3f000000),
+                                      offset: Offset(0, 4),
+                                      blurRadius: 2,
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  children: <Widget>[
+                                    // Your DropDown widgets here
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _nbCIDropdownKey,
+                                        items: const [
+                                          '1',
+                                          '2',
+                                          '3',
+                                          '4',
+                                          '5',
+                                          '6',
+                                          '12',
+                                          'Nombre CI'
+                                        ],
+
+                                        value: 'Nombre CI', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedNbCI = newValue!;
+                                                    });
+                                                  },
                                       ),
-                                    ],
-                                  ),
-                                  child: Row(
-                                    children: <Widget>[
-                                      // Your DropDown widgets here
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _nbCIDropdownKey,
-                                          items: const [
-                                            '1',
-                                            '2',
-                                            '3',
-                                            '4',
-                                            '5',
-                                            '6',
-                                            '12',
-                                            'Nombre CI'
-                                          ],
+                                    ),
 
-                                          value: 'Nombre CI', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedNbCI = newValue!;
-                                                      });
-                                                    },
-                                        ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _formeCIDropdownKey,
+                                        items: const [
+                                          'tablette',
+                                          'boite',
+                                          'Forme CI'
+                                        ],
+                                        value: 'Forme CI', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedFormeCI = newValue!;
+                                                    });
+                                                  },
                                       ),
+                                    ),
+                                    
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _nbUnCIDropdownKey,
+                                        items: const [
+                                          '2',
+                                          '3',
+                                          '6',
+                                          '7',
+                                          '10',
+                                          '14',
+                                          '15',
+                                          '20',
+                                          '30',
+                                          'Nombre d Unite'
+                                        ],
 
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _formeCIDropdownKey,
-                                          items: const [
-                                            'tablette',
-                                            'boite',
-                                            'Forme CI'
-                                          ],
-                                          value: 'Forme CI', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedFormeCI = newValue!;
-                                                      });
-                                                    },
-                                        ),
+                                        value: 'Nombre d Unite', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedNbUnCI = newValue!;
+                                                    });
+                                                  },
                                       ),
-                                      
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _nbUnCIDropdownKey,
-                                          items: const [
-                                            '2',
-                                            '3',
-                                            '6',
-                                            '7',
-                                            '10',
-                                            '14',
-                                            '15',
-                                            '20',
-                                            '30',
-                                            'Nombre d Unite'
-                                          ],
+                                    ),
 
-                                          value: 'Nombre d Unite', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedNbUnCI = newValue!;
-                                                      });
-                                                    },
-                                        ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _perCIDropdownKey,
+                                        items: const [
+                                          'oui',
+                                          'non',
+                                          'Visibilité Du Médicament',
+                                        ],
+                                        value: 'Visibilité Du Médicament', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedPerCI = newValue!;
+                                                    });
+                                                  },
                                       ),
+                                    ), 
 
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _perCIDropdownKey,
-                                          items: const [
-                                            'oui',
-                                            'non',
-                                            'Visibilité Du Médicament',
-                                          ],
-                                          value: 'Visibilité Du Médicament', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedPerCI = newValue!;
-                                                      });
-                                                    },
-                                        ),
-                                      ), 
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _couleurCIbackDropdownKey,
+                                        items: const [
+                                          'blanc',
+                                          'gris',
+                                          'transparent',
+                                          'vert',
+                                          'Couleur En Arrière'  
+                                        ],
 
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _couleurCIbackDropdownKey,
-                                          items: const [
-                                            'blanc',
-                                            'gris',
-                                            'transparent',
-                                            'vert',
-                                            'Couleur En Arrière'  
-                                          ],
-
-                                          value: 'Couleur En Arrière', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedCouleurCIback = newValue!;
-                                                      });
-                                                    },
-                                        ),
+                                        value: 'Couleur En Arrière', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedCouleurCIback = newValue!;
+                                                    });
+                                                  },
                                       ),
+                                    ),
 
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _couleurCIDropdownKey,
-                                          items: const [
-                                            'blanc + bleu',
-                                            'blanc + rouge + bleu',
-                                            'blanc + bleu + vert',
-                                            'gris + noir',
-                                            'gris + rouge',
-                                            'gris + noir + rouge',
-                                            'gris + bleu + rouge',
-                                            'gris + rouge + vert',
-                                            'gris + rouge + violet',
-                                            'gris + violet + bleu',
-                                            'Couleur Frontale'
-                                          ],
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _couleurCIDropdownKey,
+                                        items: const [
+                                          'blanc + bleu',
+                                          'blanc + rouge + bleu',
+                                          'blanc + bleu + vert',
+                                          'gris + noir',
+                                          'gris + rouge',
+                                          'gris + noir + rouge',
+                                          'gris + bleu + rouge',
+                                          'gris + rouge + vert',
+                                          'gris + rouge + violet',
+                                          'gris + violet + bleu',
+                                          'Couleur Frontale'
+                                        ],
 
-                                          value: 'Couleur Frontale', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedCouCI = newValue!;
-                                                      });
-                                                    },
-                                        ),
+                                        value: 'Couleur Frontale', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedCouCI = newValue!;
+                                                    });
+                                                  },
                                       ),
+                                    ),
 
-                                    ],
-                                  ),
+                                  ],
                                 ),
                               ),
-                          ),
+                            ),
+                        
                         ],
                       ),
                     ),
                     //validé
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.2,
+                      height: MediaQuery.of(context).size.height * 0.02,
+                      width:  MediaQuery.of(context).size.width,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.16,
                       width: MediaQuery.of(context).size.width * 0.9,
                       child: Column(
                         children: [
                           Container(
-                            margin: const EdgeInsets.fromLTRB(20, 0, 24.5, 16),
+                            margin: EdgeInsets.fromLTRB(4*EdgeMargin, 0, EdgeMargin, EdgeMargin), //hna
                             width: MediaQuery.of(context).size.width,
-                            child: SizedBox(
+                            child: SizedBox( //hna
                               width: MediaQuery.of(context).size.width * 0.3,
                               height: MediaQuery.of(context).size.height * 0.05,
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.29,
-                                height: MediaQuery.of(context).size.height * 0.04,
                                 child: const Text(
                                   'Conditionnement Secondaire:',
                                   style: TextStyle(
                                     fontFamily: 'Roboto',
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w400,
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.bold, //hna
                                     height: 1.5,
                                     letterSpacing: 0.41,
                                     color: Color(0xff2d0c57),
@@ -2603,297 +2602,302 @@ void _onTabTapped(int index) {
                                 ),
                               ),
                             ),
-                          ),
-                            Expanded(
-                              child: SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Container(
-                                  margin: const EdgeInsets.fromLTRB(17, 0, 0, 16),
-                                  //width: double.infinity, // Adjust the width as needed
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(27),
-                                    border: Border.all(color: const Color(0xffd8d0e3)),
-                                    color: const Color(0xffffffff),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Color(0x3f000000),
-                                        offset: Offset(0, 4),
-                                        blurRadius: 2,
-                                      ),
-                                    ],
-                                  ),
-                                  child: Row(
-                                    children: <Widget>[
-                                      // Your DropDown widgets here
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _dciDropdownKey,
-                                          items: const [
-                                            'Acebutolol',
-                                            'Amlodipine',
-                                            'Aténolol',
-                                            'Bisoprolol',
-                                            'Candésartan',
-                                            'Celiprolol',
-                                            'Clopidogrel',
-                                            'Dipyridamole',
-                                            'Enalapril',
-                                            'Enalapril + Hydrochlorothiazide',
-                                            'Furosémide',
-                                            'Irbésartan',
-                                            'Irbésartan + Amlodipine',
-                                            'Indapamide',
-                                            'Indapamide + Amlodipine',
-                                            'Lercanidipine',
-                                            'Losartan',
-                                            'Methyldopa',
-                                            'Moxonidine',
-                                            'Nebivolol',
-                                            'Nicardipine',
-                                            'Perindopril + Indapamide',
-                                            'Prazosine',
-                                            'Propranolol',
-                                            'Ramipril',
-                                            'Sotalol',
-                                            'Spironolactone',
-                                            'Telmisartan',
-                                            'Telmisartan + Amlodipine',
-                                            'Telmisartan + Hydrochlorothiazide',
-                                            'Ticagrélor',
-                                            'Trimétazidine',
-                                            'Valsartan',
-                                            'Valsartan + Amlodipine',
-                                            'Valsartan + Amlodipine + Hydrochlorothiazide',
-                                            'DCI'
-                                          ],
- 
-                                          value: 'DCI', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedDci = newValue!;
-                                                      });
-                                                    },
-                                        ),
-                                      ),
-
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _nbDciDropdownKey,
-                                          items: const [
-                                            '1',
-                                            '2',
-                                            '3',
-                                            'Nombre Dci'
-                                          ],
-
-                                          value: 'Nombre Dci', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedNbDci = newValue!;
-                                                      });
-                                                    },
-                                        ),
-                                      ),
-                                      
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _dosageDropdownKey,
-                                          items: const [
-                                            '0,2 mg',
-                                            '0,4 mg',
-                                            '1,5 mg',
-                                            '1,5 / 5 mg',
-                                            '2,5 mg',
-                                            '4 mg',
-                                            '5 / 1,25 mg',
-                                            '5 mg',
-                                            '5 / 5 mg',
-                                            '5 / 80 mg',
-                                            '8 mg',
-                                            '10 mg',
-                                            '10 / 2,5 mg',
-                                            '10 / 5 mg',
-                                            '16 mg', 
-                                            '20 mg',
-                                            '20 / 10 mg',
-                                            '20 / 20 mg',
-                                            '25 mg',
-                                            '35 mg',
-                                            '40 mg',
-                                            '40 / 5 mg',
-                                            '50 mg',
-                                            '50 / 12,5 mg',
-                                            '75 mg',
-                                            '80 mg',
-                                            '80 / 5 mg',
-                                            '5 / 10 mg',
-                                            '80 / 12,5 mg',
-                                            '90 mg',
-                                            '100 mg',
-                                            '150 / 12,5 mg',
-                                            '160 mg',
-                                            '160 / 5 mg',
-                                            '160 / 10 / 12,5 mg',
-                                            '160 / 10 / 25 mg',
-                                            '200 mg',
-                                            '250 mg',
-                                            '300 / 5 mg',
-                                            '300 mg',
-                                            '300 / 10 mg',
-                                            '300 / 12,5 mg',
-                                            '400 mg',
-                                            '500 mg',
-                                            'Dosage'
-                                          ],
-
-                                          value: 'Dosage', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedDosage = newValue!;
-                                                      });
-                                                    },
-                                        ),
-                                      ),
-
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _contenanceDropdownKey,
-                                          items: const [
-                                            '20',
-                                            '28',
-                                            '30',
-                                            '45',
-                                            '50',
-                                            '60',
-                                            '90',
-                                            '120',
-                                            'Contenance'
-                                          ],
-
-                                          value: 'Contenance', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedContenance = newValue!;
-                                                      });
-                                                    },
-                                        ),
-                                      ),
-
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _industrieDropdownKey,
-                                          items: const [
-                                            'Abbott Products S.A.S',
-                                            'Adwya',
-                                            'Berlin-Chemie AG',
-                                            'Bouchara-Recordati',
-                                            'Dar Essaydali',
-                                            'Hikma',
-                                            'IPS',
-                                            'Juvise',
-                                            'LUSO FARMACO IT',
-                                            'Medis',
-                                            'Medochemie',
-                                            'Merck',
-                                            'Mylan',
-                                            'Novartis',
-                                            'Opalia',
-                                            'Pfizer',
-                                            'Philadelphia',
-                                            'Philadelphia Pharma',
-                                            'Pharmaghreb',
-                                            'Pharmacare',
-                                            'Sanofi',
-                                            'Saiph',
-                                            'Servier',
-                                            'Taha Pharma',
-                                            'Teriak',
-                                            'Thera',
-                                            'Industrie'
-                                          ],
-
-                                          value: 'Industrie', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedIndustrie = newValue!;
-                                                      });
-                                                    },
-                                        ),
-                                      ),
-
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _prixDropdownKey,
-                                          items: const [
-                                            '0,10',
-                                            '10,25', 
-                                            '25,40',
-                                            '40,60', 
-                                            '60,100',
-                                            '100,150',
-                                            'Prix'
-                                          ], 
-                                          value: 'Prix', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedPrix = newValue!;
-                                                      });
-                                                    },
-                                        ),
-                                      ),
-
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                        child: DropDow(
-                                          key: _couleurCIIDropdownKey,
-                                          items: const [
-                                          'blanc + bleu',
-                                          'blanc + bleu + gris',
-                                          'blanc + bleu + jaune',
-                                          'blanc + bleu + marron',
-                                          'blanc + bleu + noir',
-                                          'blanc + bleu + orange',
-                                          'blanc + bleu + vert',
-                                          'blanc + bleu + violet',
-                                          'blanc + gris + vert',
-                                          'blanc + jaune + rouge',
-                                          'blanc + noir + jaune',
-                                          'blanc + noir + orangé',
-                                          'blanc + noir + vert',
-                                          'blanc + rouge',
-                                          'blanc + rouge + bleu',
-                                          'blanc + rouge + gris',
-                                          'blanc + rouge + noir',
-                                          'blanc + rouge + vert',
-                                          'blanc + rouge + violet',
-                                          'orange + bleu + violet',
-                                          'Couleur'
+  
+                          SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(1.5*EdgeMargin, 0, 1.5*EdgeMargin, 0),
+                                //width: double.infinity, // Adjust the width as needed
+                                height: MediaQuery.of(context).size.height * 0.09,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(27),
+                                  border: Border.all(color: const Color(0xffd8d0e3)),
+                                  color: const Color(0xffffffff),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Color(0x3f000000),
+                                      offset: Offset(0, 4),
+                                      blurRadius: 2,
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  children: <Widget>[
+                                    // Your DropDown widgets here
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _dciDropdownKey,
+                                        items: const [
+                                          'Acebutolol',
+                                          'Amlodipine',
+                                          'Aténolol',
+                                          'Bisoprolol',
+                                          'Candésartan',
+                                          'Celiprolol',
+                                          'Clopidogrel',
+                                          'Dipyridamole',
+                                          'Enalapril',
+                                          'Enalapril + Hydrochlorothiazide',
+                                          'Furosémide',
+                                          'Irbésartan',
+                                          'Irbésartan + Amlodipine',
+                                          'Indapamide',
+                                          'Indapamide + Amlodipine',
+                                          'Lercanidipine',
+                                          'Losartan',
+                                          'Methyldopa',
+                                          'Moxonidine',
+                                          'Nebivolol',
+                                          'Nicardipine',
+                                          'Perindopril + Indapamide',
+                                          'Prazosine',
+                                          'Propranolol',
+                                          'Ramipril',
+                                          'Sotalol',
+                                          'Spironolactone',
+                                          'Telmisartan',
+                                          'Telmisartan + Amlodipine',
+                                          'Telmisartan + Hydrochlorothiazide',
+                                          'Ticagrélor',
+                                          'Trimétazidine',
+                                          'Valsartan',
+                                          'Valsartan + Amlodipine',
+                                          'Valsartan + Amlodipine + Hydrochlorothiazide',
+                                          'DCI'
                                         ],
 
-                                          value: 'Couleur', 
-                                          onChanged: (newValue) {
-                                                      setState(() {
-                                                        selectedCouCII = newValue!;
-                                                      });
-                                                    },
-                                        ),
+                                        value: 'DCI', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedDci = newValue!;
+                                                    });
+                                                  },
                                       ),
+                                    ),
 
-                                    ],
-                                  ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _nbDciDropdownKey,
+                                        items: const [
+                                          '1',
+                                          '2',
+                                          '3',
+                                          'Nombre Dci'
+                                        ],
+
+                                        value: 'Nombre Dci', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedNbDci = newValue!;
+                                                    });
+                                                  },
+                                      ),
+                                    ),
+                                    
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _dosageDropdownKey,
+                                        items: const [
+                                          '0,2 mg',
+                                          '0,4 mg',
+                                          '1,5 mg',
+                                          '1,5 / 5 mg',
+                                          '2,5 mg',
+                                          '4 mg',
+                                          '5 / 1,25 mg',
+                                          '5 mg',
+                                          '5 / 5 mg',
+                                          '5 / 80 mg',
+                                          '8 mg',
+                                          '10 mg',
+                                          '10 / 2,5 mg',
+                                          '10 / 5 mg',
+                                          '16 mg', 
+                                          '20 mg',
+                                          '20 / 10 mg',
+                                          '20 / 20 mg',
+                                          '25 mg',
+                                          '35 mg',
+                                          '40 mg',
+                                          '40 / 5 mg',
+                                          '50 mg',
+                                          '50 / 12,5 mg',
+                                          '75 mg',
+                                          '80 mg',
+                                          '80 / 5 mg',
+                                          '5 / 10 mg',
+                                          '80 / 12,5 mg',
+                                          '90 mg',
+                                          '100 mg',
+                                          '150 / 12,5 mg',
+                                          '160 mg',
+                                          '160 / 5 mg',
+                                          '160 / 10 / 12,5 mg',
+                                          '160 / 10 / 25 mg',
+                                          '200 mg',
+                                          '250 mg',
+                                          '300 / 5 mg',
+                                          '300 mg',
+                                          '300 / 10 mg',
+                                          '300 / 12,5 mg',
+                                          '400 mg',
+                                          '500 mg',
+                                          'Dosage'
+                                        ],
+
+                                        value: 'Dosage', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedDosage = newValue!;
+                                                    });
+                                                  },
+                                      ),
+                                    ),
+
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _contenanceDropdownKey,
+                                        items: const [
+                                          '20',
+                                          '28',
+                                          '30',
+                                          '45',
+                                          '50',
+                                          '60',
+                                          '90',
+                                          '120',
+                                          'Contenance'
+                                        ],
+
+                                        value: 'Contenance', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedContenance = newValue!;
+                                                    });
+                                                  },
+                                      ),
+                                    ),
+
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _industrieDropdownKey,
+                                        items: const [
+                                          'Abbott Products S.A.S',
+                                          'Adwya',
+                                          'Berlin-Chemie AG',
+                                          'Bouchara-Recordati',
+                                          'Dar Essaydali',
+                                          'Hikma',
+                                          'IPS',
+                                          'Juvise',
+                                          'LUSO FARMACO IT',
+                                          'Medis',
+                                          'Medochemie',
+                                          'Merck',
+                                          'Mylan',
+                                          'Novartis',
+                                          'Opalia',
+                                          'Pfizer',
+                                          'Philadelphia',
+                                          'Philadelphia Pharma',
+                                          'Pharmaghreb',
+                                          'Pharmacare',
+                                          'Sanofi',
+                                          'Saiph',
+                                          'Servier',
+                                          'Taha Pharma',
+                                          'Teriak',
+                                          'Thera',
+                                          'Industrie'
+                                        ],
+
+                                        value: 'Industrie', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedIndustrie = newValue!;
+                                                    });
+                                                  },
+                                      ),
+                                    ),
+
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _prixDropdownKey,
+                                        items: const [
+                                          '0,10',
+                                          '10,25', 
+                                          '25,40',
+                                          '40,60', 
+                                          '60,100',
+                                          '100,150',
+                                          'Prix'
+                                        ], 
+                                        value: 'Prix', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedPrix = newValue!;
+                                                    });
+                                                  },
+                                      ),
+                                    ),
+
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: DropDow(
+                                        key: _couleurCIIDropdownKey,
+                                        items: const [
+                                        'blanc + bleu',
+                                        'blanc + bleu + gris',
+                                        'blanc + bleu + jaune',
+                                        'blanc + bleu + marron',
+                                        'blanc + bleu + noir',
+                                        'blanc + bleu + orange',
+                                        'blanc + bleu + vert',
+                                        'blanc + bleu + violet',
+                                        'blanc + gris + vert',
+                                        'blanc + jaune + rouge',
+                                        'blanc + noir + jaune',
+                                        'blanc + noir + orangé',
+                                        'blanc + noir + vert',
+                                        'blanc + rouge',
+                                        'blanc + rouge + bleu',
+                                        'blanc + rouge + gris',
+                                        'blanc + rouge + noir',
+                                        'blanc + rouge + vert',
+                                        'blanc + rouge + violet',
+                                        'orange + bleu + violet',
+                                        'Couleur'
+                                      ],
+
+                                        value: 'Couleur', 
+                                        onChanged: (newValue) {
+                                                    setState(() {
+                                                      selectedCouCII = newValue!;
+                                                    });
+                                                  },
+                                      ),
+                                    ),
+
+                                  ],
                                 ),
                               ),
-                          ),
+                            ),
+                          
                         ],
                       ),
                     ),
                     //validé
+
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.02,
+                      width:  MediaQuery.of(context).size.width,
+                    ),
                     GestureDetector(
                       onTap: () async {
                         test = await Safi(
@@ -2920,8 +2924,9 @@ void _onTabTapped(int index) {
                         ); 
                       },
                       child: Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              height: MediaQuery.of(context).size.height * 0.0625,
+                        margin: EdgeInsets.fromLTRB(12*EdgeMargin, EdgeMargin, 12*EdgeMargin, 0),
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        height: MediaQuery.of(context).size.height * 0.0625,
                         decoration: BoxDecoration(
                           color: const Color(0xff0bce83),
                           borderRadius: BorderRadius.circular(8),
@@ -2933,7 +2938,7 @@ void _onTabTapped(int index) {
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 15,
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.bold,
                               height: 1.2,
                               letterSpacing: -0.01,
                             ),
@@ -2947,8 +2952,9 @@ void _onTabTapped(int index) {
                         resetDropdownValues();
                       },
                       child: Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              height: MediaQuery.of(context).size.height * 0.0625,
+                        margin: EdgeInsets.fromLTRB(12*EdgeMargin, 1.5*EdgeMargin, 12*EdgeMargin, EdgeMargin),
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        height: MediaQuery.of(context).size.height * 0.0625,
                         decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 205, 207, 206),
                           borderRadius: BorderRadius.circular(8),
@@ -2960,7 +2966,7 @@ void _onTabTapped(int index) {
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 15,
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.bold,
                               height: 1.2,
                               letterSpacing: -0.01,
                             ),
@@ -3004,177 +3010,7 @@ void _onTabTapped(int index) {
 }
 
 
-class Letters extends StatefulWidget {
-  final String name;
-  const Letters({Key? key, required this.name}) : super(key: key);
 
-  @override
-  State<Letters> createState() => _LettersState();
-}
-//validé
-class _LettersState extends State<Letters> {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.14,
-      width: MediaQuery.of(context).size.width * 0.9,
-      child:Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.fromLTRB(20, 0, 24.5, 16),
-            width: MediaQuery.of(context).size.width * 0.9,
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width * 0.3,
-              height: MediaQuery.of(context).size.height * 0.05, 
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.29,
-                height: MediaQuery.of(context).size.height * 0.04,
-                child: Text(
-                  widget.name,
-                  style: const TextStyle(
-                    fontFamily: 'Roboto',
-                    fontSize: 24,
-                    fontWeight: FontWeight.w400,
-                    height: 1.5,
-                    letterSpacing: 0.41,
-                    color: Color(0xff2d0c57),
-                  ),
-                ),
-              ),      
-            ),
-          ),
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.fromLTRB(17, 0, 0, 16),
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height * 0.07,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(27),
-                border: Border.all(color: const Color(0xffd8d0e3)),
-                color: const Color(0xffffffff),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color(0x3f000000),
-                    offset: Offset(0, 4),
-                    blurRadius: 2,
-                  ),
-                ],
-              ),
-              child: const TextField(
-                decoration: InputDecoration(
-                  labelText: 'Les Lettres',
-                  hintText: 'Entrez les lettres qui sont présentes dans le nom de la spécialité',
-                  hintStyle: TextStyle(
-                    fontFamily: 'Roboto',
-                    fontSize: 17,
-                    fontWeight: FontWeight.w400,
-                    height: 1.2941176471,
-                    letterSpacing: -0.41,
-                    color: Color(0xff9586a8),
-                  ),
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.zero,
-                  isDense: true,
-                ),
-              ),
-
-
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-//validé
-class Fasakh extends StatefulWidget {
-    const Fasakh({Key? key}) : super(key: key);
-
-  @override
-  State<Fasakh> createState() => _FasakhState();
-}
-//validé ama mesh mesta3emla
-class _FasakhState extends State<Fasakh> {
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const PageII()),
-        );
-      },
-      child: Container(
-              width: MediaQuery.of(context).size.width * 0.4,
-              height: MediaQuery.of(context).size.height * 0.0625,
-        decoration: BoxDecoration(
-          color: const Color(0xfff6f5f5),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: const Center(
-          child: Text(
-            'Réinitialiser',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Roboto',
-              fontSize: 15,
-              fontWeight: FontWeight.w400,
-              height: 1.2,
-              letterSpacing: -0.01,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-//validé ama mesh mesta3emla
-class FilterButton extends StatefulWidget {
-    const FilterButton({Key? key}) : super(key: key);
-
-  @override
-  State<FilterButton> createState() => _FilterButtonState();
-}
-//validé ama mesh mesta3emla
-class _FilterButtonState extends State<FilterButton> {
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const PageII()),
-        );
-      },
-      child: Container(
-              width: MediaQuery.of(context).size.width * 0.4,
-              height: MediaQuery.of(context).size.height * 0.0625,
-        decoration: BoxDecoration(
-          color: const Color(0xff0bce83),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: const Center(
-          child: Text(
-            'Filtrer',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Roboto',
-              fontSize: 15,
-              fontWeight: FontWeight.w400,
-              height: 1.2,
-              letterSpacing: -0.01,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-//validé ama mesh mesta3emla
 class DropDow extends StatefulWidget {
   const DropDow({
     Key? key,
@@ -3210,17 +3046,17 @@ class _DropDowState extends State<DropDow> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.25,
-      height: MediaQuery.of(context).size.height * 0.043,
+      width: MediaQuery.of(context).size.width * 0.23,
+      height: MediaQuery.of(context).size.height * 0.041,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(27),
         border: Border.all(color: const Color(0xffd8d0e3)),
         color: const Color(0xffffffff),
         boxShadow: const [
           BoxShadow(
-            color: Color(0x3f000000),
-            offset: Offset(0, 4),
-            blurRadius: 2,
+          color: Color(0x3f000000),
+          offset: Offset(0, 2),
+          blurRadius: 2,
           ),
         ],
       ),
@@ -3237,6 +3073,14 @@ class _DropDowState extends State<DropDow> {
         underline: Container(
           height: 0,
           color: Colors.transparent,
+        ),
+        style: TextStyle(
+          fontFamily: 'Roboto',
+          fontSize: 10,
+          fontWeight: FontWeight.bold,
+          height: 1,
+          letterSpacing: 0.25,
+          color: Color(0xff2d0c57),
         ),
         items: widget.items.map((String dropDownStringItem) {
           return DropdownMenuItem<String>(

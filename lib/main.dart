@@ -20,6 +20,9 @@ class _PageIWidgetState extends State<PageI> {
   double Minimumpadding = 5;
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       extendBody: true,
       //appBar: AppBar(
@@ -45,11 +48,11 @@ class _PageIWidgetState extends State<PageI> {
               ),
             ),
             Positioned(
-              left: 20,
-              top: 63,
+              left: MediaQuery.of(context).size.width *  0.07,
+              top: MediaQuery.of(context).size.width *  0.12,
               child: Container(
-                width: 63,
-                height: 63,
+                width: MediaQuery.of(context).size.width *  0.17,
+                height: MediaQuery.of(context).size.width *  0.17,
                 padding: const EdgeInsets.fromLTRB(19.81, 18.2, 20.03, 18.85),
                 decoration: BoxDecoration(
                   color: const Color(0xffccffb5),
@@ -66,7 +69,7 @@ class _PageIWidgetState extends State<PageI> {
                   child: SizedBox(
                     child: Image.asset(
                       "images/logo.png", 
-                      fit: BoxFit.cover
+                      //fit: BoxFit.cover
                       ),
                   ),
                 ),
@@ -74,9 +77,9 @@ class _PageIWidgetState extends State<PageI> {
             ),
             Positioned(
               left: 0,
-              top: MediaQuery.of(context).size.height * 0.349,
+              bottom: 0,
               child: Container(
-                padding: const EdgeInsets.fromLTRB(20, 64, 20, 35),
+                padding: EdgeInsets.fromLTRB(EdgeMargin, TopMargin, EdgeMargin, ButtomMargin),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.651,
                 decoration: BoxDecoration(
@@ -92,10 +95,11 @@ class _PageIWidgetState extends State<PageI> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
 
-                    Center(
+                   Container( 
+                    width: MediaQuery.of(context).size.width * 0.12,  
+                    height: MediaQuery.of(context).size.width * 0.12,
+                    child: Center(
                       child: Container(
-                        width: MediaQuery.of(context).size.width * 0.16,  //0.251,
-                        height: MediaQuery.of(context).size.height * 0.06,    //0.116,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("images/Group.png"),
@@ -103,39 +107,35 @@ class _PageIWidgetState extends State<PageI> {
                           ),
                         ),
                       ),
-                    ),
+                    ),),
 
-                    Center(
-                      child: Container(
-                        margin: const EdgeInsets.fromLTRB(0, 0, 0, 56.5),
-                        constraints: BoxConstraints(
-                          maxHeight: MediaQuery.of(context).size.height * 0.0892,
-                          maxWidth: MediaQuery.of(context).size.width * 0.787,
-                        ),
-                        child: const Text(
-                          'Dewini',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 34,
-                            fontWeight: FontWeight.w400,
-                            height: 1.2058823529 * 34 / 16,
-                            letterSpacing: 6.6,
-                            color: Color(0xff2d0c57),
-                          ),
+                    
+                    Container(
+                      //margin: EdgeInsets.fromLTRB(0, 0, 0, ButtomMargin),
+                      constraints: BoxConstraints(
+                        maxHeight: MediaQuery.of(context).size.height * 0.0892,
+                        maxWidth: MediaQuery.of(context).size.width * 0.787,
+                      ),
+                      child: const Text(
+                        'Dewini',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                          height: 1.2058823529 * 34 / 16,
+                          letterSpacing: 6.6,
+                          color: Color(0xff2d0c57),
                         ),
                       ),
                     ),
+                    
 
                     
                     Container( 
-                      margin: const EdgeInsets.fromLTRB(0, 0, 2, 38),
-                      constraints: BoxConstraints(
-                        maxHeight: MediaQuery.of(context).size.height * 0.4,
-                        maxWidth: MediaQuery.of(context).size.width * 0.9,
-                      ),
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 4*ButtomMargin),
                       child: const Text(
-                        'Cette application est un prototype pour \nun travail de thèse d\'un étudiant en pharmacie',
+                        'Cette application est un prototype pour un travail de thèse d\'un étudiant en pharmacie',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Roboto',
