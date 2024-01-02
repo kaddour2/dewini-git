@@ -132,22 +132,24 @@ class _PageIWidgetState extends State<PageI> {
                     
 
                     
-                    Center(child:Container( 
-                      margin: EdgeInsets.fromLTRB(0, EdgeMargin, 0, 0),
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      child: const Text(
-                        'Cette application est un prototype pour un travail de thèse d\'un étudiant en pharmacie',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                          height: 2,
-                          letterSpacing: -0.4099999964,
-                          color: Color(0xff9586a8),
+                    Center(
+                      child:Container( 
+                        margin: EdgeInsets.fromLTRB(0, EdgeMargin, 0, 0),
+                        height: MediaQuery.of(context).size.height * 0.25,
+                        child: const Text(
+                          'Cette application est un prototype pour un travail de thèse d\'un étudiant en pharmacie',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Roboto',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            height: 2.5,
+                            letterSpacing: -0.4099999964,
+                            color: Color(0xff9586a8),
+                          ),
                         ),
                       ),
-                    ),),
+                    ),
                     
                     Spacer(),
                     

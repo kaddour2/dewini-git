@@ -106,7 +106,7 @@ void _onTabTapped(int index) {
                       fontFamily: 'Roboto',
                       fontSize: 27,
                       fontWeight: FontWeight.bold,
-                      height: 1.2058823529,
+                      height: 1,
                       letterSpacing: 0.41,
                       color: Color(0xff2d0c57)),
                 ),
@@ -2816,7 +2816,7 @@ class _PageIIIcardioState extends State<PageIIICardio> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.185,
                 child: Stack(
                   children: [
 
@@ -2832,8 +2832,8 @@ class _PageIIIcardioState extends State<PageIIICardio> {
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              height: 1.3666666667,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
                             ),
@@ -5444,7 +5444,7 @@ class _PageIIIcardio1State extends State<PageIIICardio1> {
   });
 }
 
-void _runFiltredFilter(List<String> eleEsmou ) { 
+  void _runFiltredFilter(List<String> eleEsmou ) { 
   List<Widget> results = [];
   print('object');
   if (eleEsmou.isNotEmpty) {
@@ -5481,7 +5481,7 @@ void _runFiltredFilter(List<String> eleEsmou ) {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.185,
                 child: Stack(
                   children: [
 
@@ -5497,8 +5497,8 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              height: 1.3666666667,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
                             ),
@@ -5786,7 +5786,7 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.185,
                 child: Stack(
                   children: [
 
@@ -5802,8 +5802,8 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              height: 1.3666666667,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
                             ),
@@ -6092,7 +6092,7 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.158,
                 child: Stack(
                   children: [
 
@@ -6108,8 +6108,8 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              height: 1.3666666667,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
                             ),
@@ -6395,7 +6395,7 @@ class _PageIIINfectState extends State<PageIIINfect> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.185,
                 child: Stack(
                   children: [
 
@@ -6411,8 +6411,8 @@ class _PageIIINfectState extends State<PageIIINfect> {
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              height: 1.3666666667,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
                               letterSpacing: 0.4099999964,
                               color: Color(0xff2d0c57),
                             ),

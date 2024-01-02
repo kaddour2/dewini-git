@@ -2298,7 +2298,7 @@ void _onTabTapped(int index) {
                               scrollDirection: Axis.horizontal,
                               child: Container(
                                 margin: EdgeInsets.fromLTRB(1.5*EdgeMargin, 0, 1.5*EdgeMargin, 0),
-                                width: MediaQuery.of(context).size.width ,
+                                width: MediaQuery.of(context).size.width * 0.94 ,
                                 height: MediaQuery.of(context).size.height * 0.09,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(27),
@@ -2487,10 +2487,10 @@ void _onTabTapped(int index) {
                                           '15',
                                           '20',
                                           '30',
-                                          'Nombre d Unite'
+                                          'Nombre d\'Unité'
                                         ],
 
-                                        value: 'Nombre d Unite', 
+                                        value: 'Nombre d\'Unité', 
                                         onChanged: (newValue) {
                                                     setState(() {
                                                       selectedNbUnCI = newValue!;
@@ -2933,7 +2933,7 @@ void _onTabTapped(int index) {
                         ),
                         child: const Center(
                           child: Text(
-                            'Filtrez',
+                            'Filtrer',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'Roboto',
@@ -3045,6 +3045,7 @@ class _DropDowState extends State<DropDow> {
 
   @override
   Widget build(BuildContext context) {
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Container(
       width: MediaQuery.of(context).size.width * 0.25,
       height: MediaQuery.of(context).size.height * 0.041,
@@ -3085,7 +3086,9 @@ class _DropDowState extends State<DropDow> {
         items: widget.items.map((String dropDownStringItem) {
           return DropdownMenuItem<String>(
             value: dropDownStringItem,
-            child: Text(dropDownStringItem),
+            child:Padding(
+              padding: EdgeInsets.only(left: 0.6*EdgeMargin),
+              child:Text(dropDownStringItem),),
           );
         }).toList(),
       ),
