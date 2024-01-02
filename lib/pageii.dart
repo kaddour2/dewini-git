@@ -79,10 +79,12 @@ void _onTabTapped(int index) {
                       );
                     },
                   child: Container(
-                    padding: EdgeInsets.fromLTRB(EdgeMargin, 0.8*TopMargin, 0,0),
+                    height:MediaQuery.of(context).size.width *  0.06,
+                    width: MediaQuery.of(context).size.width *  0.06,
+                    margin: EdgeInsets.fromLTRB(EdgeMargin, 0.8*TopMargin, 0,0),
                     child: SizedBox(
-                        width: MediaQuery.of(context).size.width *  0.025,
-                        height: MediaQuery.of(context).size.width *  0.025,
+                        width: MediaQuery.of(context).size.width *  0.035,
+                        height: MediaQuery.of(context).size.width *  0.035,
                         child: Image.asset(
                           'images/backup.png',
                         ),
@@ -91,7 +93,7 @@ void _onTabTapped(int index) {
                   ),
                 ),
               
-                SizedBox(height: MediaQuery.of(context).size.width *  0.15,),
+                SizedBox(height: MediaQuery.of(context).size.width *  0.1,),
               
                 Container(
 
@@ -2814,7 +2816,7 @@ class _PageIIIcardioState extends State<PageIIICardio> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.2,
+                height: MediaQuery.of(context).size.height * 0.25,
                 child: Stack(
                   children: [
 
@@ -2873,20 +2875,16 @@ class _PageIIIcardioState extends State<PageIIICardio> {
                           );
                         },
                         child: Container(
-                          margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                          padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.025,
-                              height: MediaQuery.of(context).size.width *  0.025,
+                          height:MediaQuery.of(context).size.width *  0.06,
+                          width: MediaQuery.of(context).size.width *  0.06,
+                          margin: EdgeInsets.fromLTRB(EdgeMargin, 0.65*TopMargin, 0,0),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width *  0.035,
+                              height: MediaQuery.of(context).size.width *  0.035,
                               child: Image.asset(
                                 'images/backup.png',
-                               // width: MediaQuery.of(context).size.width *  0.0144,
-                                //height: MediaQuery.of(context).size.height * 0.133,
                               ),
                             ),
-                          ),
                         ),
                       ),
                     ),
@@ -5483,7 +5481,7 @@ void _runFiltredFilter(List<String> eleEsmou ) {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.2,
+                height: MediaQuery.of(context).size.height * 0.25,
                 child: Stack(
                   children: [
 
@@ -5542,20 +5540,16 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                           );
                         },
                         child: Container(
-                          margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                          padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.025,
-                              height: MediaQuery.of(context).size.width *  0.025,
+                          height:MediaQuery.of(context).size.width *  0.06,
+                          width: MediaQuery.of(context).size.width *  0.06,
+                          margin: EdgeInsets.fromLTRB(EdgeMargin, 0.65*TopMargin, 0,0),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width *  0.035,
+                              height: MediaQuery.of(context).size.width *  0.035,
                               child: Image.asset(
                                 'images/backup.png',
-                               // width: MediaQuery.of(context).size.width *  0.0144,
-                                //height: MediaQuery.of(context).size.height * 0.133,
                               ),
                             ),
-                          ),
                         ),
                       ),
                     ),
@@ -5564,49 +5558,6 @@ void _runFiltredFilter(List<String> eleEsmou ) {
                 ),
               ),
             
-              Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.055,
-                margin: EdgeInsets.fromLTRB(2.5*EdgeMargin, 0, EdgeMargin, 0),
-                decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xffd8d0e3)),
-                  color: const Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(27.0),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 5*EdgeMargin,
-                      height: 5* EdgeMargin,
-                      margin: EdgeInsets.fromLTRB(1.2*EdgeMargin, 0, 0, 0),
-                      child: Image.asset(
-                        'images/rechercher.png',
-                      ),
-                    ),
-                    Expanded(
-                      child: TextField(
-                        onChanged: (value) => _runFilter(value),
-                        decoration: const InputDecoration(
-                        labelText: 'Chercher',
-                        hintText: 'Entrez une specialité',
-                        hintStyle: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2941176471,
-                          letterSpacing: -0.41,
-                          color: Color(0xff9586a8),
-                        ),
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.zero,
-                        isDense: true,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
 
               Expanded(
             child: _foundFiltredProds.isNotEmpty
@@ -5835,7 +5786,7 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.2,
+                height: MediaQuery.of(context).size.height * 0.25,
                 child: Stack(
                   children: [
 
@@ -5894,20 +5845,16 @@ class _PageIIIgastroState extends State<PageIIIGastro> {
                           );
                         },
                         child: Container(
-                          margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                          padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.025,
-                              height: MediaQuery.of(context).size.width *  0.025,
+                          height:MediaQuery.of(context).size.width *  0.06,
+                          width: MediaQuery.of(context).size.width *  0.06,
+                          margin: EdgeInsets.fromLTRB(EdgeMargin, 0.65*TopMargin, 0,0),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width *  0.035,
+                              height: MediaQuery.of(context).size.width *  0.035,
                               child: Image.asset(
                                 'images/backup.png',
-                               // width: MediaQuery.of(context).size.width *  0.0144,
-                                //height: MediaQuery.of(context).size.height * 0.133,
                               ),
                             ),
-                          ),
                         ),
                       ),
                     ),
@@ -6145,7 +6092,7 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.2,
+                height: MediaQuery.of(context).size.height * 0.25,
                 child: Stack(
                   children: [
 
@@ -6204,20 +6151,16 @@ class _PageIIIneuroState extends State<PageIIINeuro> {
                           );
                         },
                         child: Container(
-                          margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                          padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.025,
-                              height: MediaQuery.of(context).size.width *  0.025,
+                          height:MediaQuery.of(context).size.width *  0.06,
+                          width: MediaQuery.of(context).size.width *  0.06,
+                          margin: EdgeInsets.fromLTRB(EdgeMargin, 0.65*TopMargin, 0,0),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width *  0.035,
+                              height: MediaQuery.of(context).size.width *  0.035,
                               child: Image.asset(
                                 'images/backup.png',
-                               // width: MediaQuery.of(context).size.width *  0.0144,
-                                //height: MediaQuery.of(context).size.height * 0.133,
                               ),
                             ),
-                          ),
                         ),
                       ),
                     ),
@@ -6452,7 +6395,7 @@ class _PageIIINfectState extends State<PageIIINfect> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.2,
+                height: MediaQuery.of(context).size.height * 0.25,
                 child: Stack(
                   children: [
 
@@ -6511,21 +6454,16 @@ class _PageIIINfectState extends State<PageIIINfect> {
                           );
                         },
                         child: Container(
-                          margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                          padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width *  0.025,
-                              height: MediaQuery.of(context).size.width *  0.025,
+                          height:MediaQuery.of(context).size.width *  0.06,
+                          width: MediaQuery.of(context).size.width *  0.06,
+                          margin: EdgeInsets.fromLTRB(EdgeMargin, 0.65*TopMargin, 0,0),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width *  0.035,
+                              height: MediaQuery.of(context).size.width *  0.035,
                               child: Image.asset(
                                 'images/backup.png',
-                                fit: BoxFit.contain,
-                               // width: MediaQuery.of(context).size.width *  0.0144,
-                                //height: MediaQuery.of(context).size.height * 0.133,
                               ),
                             ),
-                          ),
                         ),
                       ),
                     ),
@@ -6780,6 +6718,9 @@ class _PageIVState extends State<PageIV> {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       //appBar: AppBar(
       //  title: const Text("Page IV"),
@@ -6826,21 +6767,17 @@ class _PageIVState extends State<PageIV> {
                     );
                   },
                   child: Container(
-                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                    padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width *  0.025,
-                        height: MediaQuery.of(context).size.width *  0.025,
-                        child: Image.asset(
-                          'images/backup.png',
-                          //width: MediaQuery.of(context).size.width *  0.0144,
-                          //height: MediaQuery.of(context).size.height * 0.133,
+                          height:MediaQuery.of(context).size.width *  0.06,
+                          width: MediaQuery.of(context).size.width *  0.06,
+                          margin: EdgeInsets.fromLTRB(EdgeMargin, 0.8*TopMargin, 0,0),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width *  0.035,
+                              height: MediaQuery.of(context).size.width *  0.035,
+                              child: Image.asset(
+                                'images/backup.png',
+                              ),
+                            ),
                         ),
-                      ),
-                    ),
-                  ),
                 ),
               ),
 
@@ -6960,6 +6897,9 @@ class _PageIVGastroState extends State<PageIVGastro> {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       //appBar: AppBar(
       //  title: const Text("Page IV"),
@@ -7006,21 +6946,17 @@ class _PageIVGastroState extends State<PageIVGastro> {
                     );
                   },
                   child: Container(
-                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                    padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width *  0.025,
-                        height: MediaQuery.of(context).size.width *  0.025,
-                        child: Image.asset(
-                          'images/backup.png',
-                         // width: MediaQuery.of(context).size.width *  0.0144,
-                          //height: MediaQuery.of(context).size.height * 0.133,
+                          height:MediaQuery.of(context).size.width *  0.06,
+                          width: MediaQuery.of(context).size.width *  0.06,
+                          margin: EdgeInsets.fromLTRB(EdgeMargin, 0.8*TopMargin, 0,0),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width *  0.035,
+                              height: MediaQuery.of(context).size.width *  0.035,
+                              child: Image.asset(
+                                'images/backup.png',
+                              ),
+                            ),
                         ),
-                      ),
-                    ),
-                  ),
                 ),
               ),
 
@@ -7140,6 +7076,9 @@ class _PageIVNeuroState extends State<PageIVNeuro> {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       //appBar: AppBar(
       //  title: const Text("Page IV"),
@@ -7186,21 +7125,17 @@ class _PageIVNeuroState extends State<PageIVNeuro> {
                     );
                   },
                   child: Container(
-                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                    padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width *  0.025,
-                        height: MediaQuery.of(context).size.width *  0.025,
-                        child: Image.asset(
-                          'images/backup.png',
-                         // width: MediaQuery.of(context).size.width *  0.0144,
-                          //height: MediaQuery.of(context).size.height * 0.133,
+                          height:MediaQuery.of(context).size.width *  0.06,
+                          width: MediaQuery.of(context).size.width *  0.06,
+                          margin: EdgeInsets.fromLTRB(EdgeMargin, 0.8*TopMargin, 0,0),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width *  0.035,
+                              height: MediaQuery.of(context).size.width *  0.035,
+                              child: Image.asset(
+                                'images/backup.png',
+                              ),
+                            ),
                         ),
-                      ),
-                    ),
-                  ),
                 ),
               ),
 
@@ -7320,6 +7255,9 @@ class _PageIVInfState extends State<PageIVInf> {
 
   @override
   Widget build(BuildContext context) {
+    double ButtomMargin = MediaQuery.of(context).size.height * 0.02;
+    double TopMargin = MediaQuery.of(context).size.height * 0.11;
+    double EdgeMargin = MediaQuery.of(context).size.width * 0.02;
     return Scaffold(
       //appBar: AppBar(
       //  title: const Text("Page IV"),
@@ -7366,21 +7304,17 @@ class _PageIVInfState extends State<PageIVInf> {
                     );
                   },
                   child: Container(
-                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 1),
-                    padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width *  0.025,
-                        height: MediaQuery.of(context).size.width *  0.025,
-                        child: Image.asset(
-                          'images/backup.png',
-                          //width: MediaQuery.of(context).size.width *  0.0144,
-                          //height: MediaQuery.of(context).size.height * 0.133,
+                          height:MediaQuery.of(context).size.width *  0.06,
+                          width: MediaQuery.of(context).size.width *  0.06,
+                          margin: EdgeInsets.fromLTRB(EdgeMargin, 0.8*TopMargin, 0,0),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width *  0.035,
+                              height: MediaQuery.of(context).size.width *  0.035,
+                              child: Image.asset(
+                                'images/backup.png',
+                              ),
+                            ),
                         ),
-                      ),
-                    ),
-                  ),
                 ),
               ),
 

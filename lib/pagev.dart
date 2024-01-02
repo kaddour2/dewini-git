@@ -3046,7 +3046,7 @@ class _DropDowState extends State<DropDow> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.23,
+      width: MediaQuery.of(context).size.width * 0.25,
       height: MediaQuery.of(context).size.height * 0.041,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(27),

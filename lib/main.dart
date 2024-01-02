@@ -79,7 +79,7 @@ class _PageIWidgetState extends State<PageI> {
               left: 0,
               bottom: 0,
               child: Container(
-                padding: EdgeInsets.fromLTRB(EdgeMargin, TopMargin, EdgeMargin, ButtomMargin),
+                padding: EdgeInsets.fromLTRB(EdgeMargin, 0.7*TopMargin, EdgeMargin, ButtomMargin),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.651,
                 decoration: BoxDecoration(
@@ -111,7 +111,7 @@ class _PageIWidgetState extends State<PageI> {
 
                     
                     Container(
-                      //margin: EdgeInsets.fromLTRB(0, 0, 0, ButtomMargin),
+                      margin: EdgeInsets.fromLTRB(0, 0, 0, ButtomMargin),
                       constraints: BoxConstraints(
                         maxHeight: MediaQuery.of(context).size.height * 0.0892,
                         maxWidth: MediaQuery.of(context).size.width * 0.787,
@@ -132,23 +132,24 @@ class _PageIWidgetState extends State<PageI> {
                     
 
                     
-                    Container( 
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 4*ButtomMargin),
+                    Center(child:Container( 
+                      margin: EdgeInsets.fromLTRB(0, EdgeMargin, 0, 0),
+                      height: MediaQuery.of(context).size.height * 0.25,
                       child: const Text(
                         'Cette application est un prototype pour un travail de thèse d\'un étudiant en pharmacie',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Roboto',
-                          fontSize: 17,
+                          fontSize: 18,
                           fontWeight: FontWeight.w400,
-                          height: 4,
+                          height: 2,
                           letterSpacing: -0.4099999964,
                           color: Color(0xff9586a8),
                         ),
                       ),
-                    ),
+                    ),),
                     
-              
+                    Spacer(),
                     
                     GestureDetector(
                       onTap: () {
