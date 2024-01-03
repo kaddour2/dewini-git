@@ -6744,13 +6744,15 @@ class _PageIVState extends State<PageIV> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.372,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage("images/${widget.image4}"),
+                    child: Center(
+                      child:Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("images/${widget.image4}"),
+                          ),
                         ),
-                      ),
+                      ),  
                     ),
                   ),
                 ),
@@ -6841,19 +6843,19 @@ class _PageIVState extends State<PageIV> {
                                         throw 'Cannot launch URL';
                                       }
                                     },
-                                    child: RichText(
-                                      text: const TextSpan(
-                                        text: 'Lien pour le RCP du médicament: ',
-                                        style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.5,
-                                          letterSpacing: -0.4099999964,
-                                          color: Color(0xff9586a8),
-                                        ),
+                                    child: Text(
+                                      'Voir RCP du médicament. ',
+                                      style: TextStyle(
+                                        decoration : TextDecoration.underline,
+                                        fontFamily: 'Roboto',
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.5,
+                                        letterSpacing: -0.4099999964,
+                                        color: Color(0xff9586a8),
                                       ),
                                     ),
+                                    
                                   ),
                                 ),
                               ),
